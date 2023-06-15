@@ -1,8 +1,24 @@
-import express from "express"
-import cors from "cors"
+import dotenv from "dotenv";
+import { Server } from "./models/server";
+import { UserData } from "./interfaces/user";
 
-const app = express()
-app.use(express.json())
+declare global {
+  namespace NodeJS {
+    interface ProcessEnv {
+      NODE_ENV: "development" | "production";
+      PORT: number | string;
+      DOMAIN: string;
+      MONGO_CONNECTION: string;
+    }
+  }
+  namespace Express {
+    interface Request {
+      user?: UserData;
+    }
+  }
+}
+dotenv.config({ debug: true, path: "./config.env" });
 
+const server = new Server();
 
-export default app
+server.listen();
