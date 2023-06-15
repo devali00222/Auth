@@ -1,6 +1,6 @@
 import { CustomValidator } from "express-validator";
-import { UserData } from "../../../../interfaces/user";
-import { UserModel } from "../../../../models/user";
+import { UserData } from "../../../../interfaces";
+import { UserModel } from "../../../../models";
 import { checkIfPasswordIsCorrectWithHash } from "../../../../helpers";
 export const usernameExistInDatabase: CustomValidator = async (
   username

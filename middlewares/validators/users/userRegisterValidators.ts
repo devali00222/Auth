@@ -1,5 +1,5 @@
 import { check } from "express-validator";
-import { Role } from "../../../interfaces/user";
+import { Role } from "../../../interfaces";
 import { validateRequest } from "../../validateRequest";
 import {
   emailExistInDatabase,

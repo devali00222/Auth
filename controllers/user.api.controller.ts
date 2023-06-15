@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { hashPasswordWithBcrypt, signJwt } from "../helpers";
-import { Role, UpdateUser, UserData } from "../interfaces/user";
-import { UserModel } from "../models/user";
+import { Role, UpdateUser, UserData } from "../interfaces";
+import { UserModel } from "../models";
 /**
  * Login User
  * @param req

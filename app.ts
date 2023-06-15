@@ -1,6 +1,6 @@
 import dotenv from "dotenv";
-import { Server } from "./models/server";
-import { UserData } from "./interfaces/user";
+import { Server } from "./models";
+import { UserData } from "./interfaces";
 
 declare global {
   namespace NodeJS {

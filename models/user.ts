@@ -1,5 +1,5 @@
 import mongoose, { Schema, model } from "mongoose";
-import { Role, UserData } from "../interfaces/user";
+import { Role, UserData } from "../interfaces";
 
 const User = new Schema<UserData>({
   username: {
