@@ -8,7 +8,7 @@ import {
 import {
   registerUserValidators,
   loginUserValidators,
-  // userUpdateValidators,
+  userUpdateValidators,
   // userDeleteValidators,
 } from "../middlewares";
 
@@ -16,7 +16,7 @@ const router = Router();
 
 router.post("/login", loginUserValidators, loginUser);
 router.post("/register", registerUserValidators, registerUser);
-router.put("/:id", updateUser);
+router.put("/:id", userUpdateValidators, updateUser);
 router.put("/:id/delete", deleteUser);
 
 router.get("*", function (req: Request, res: Response) {

@@ -8,11 +8,19 @@ export interface UserData {
   img?: string;
   isDeleted?: boolean;
 }
-export interface UpdateUser {
+export interface UpdateUserPassword {
   role: Role.NORMAL_USER_ROLE | Role.PREMIUM_USER_ROLE;
   email?: string;
   password?: string;
   newPassword?: string;
+  img?: string;
+  isDeleted?: boolean;
+}
+export interface UpdateUserEmail {
+  role: Role.NORMAL_USER_ROLE | Role.PREMIUM_USER_ROLE;
+  email?: string;
+  newEmail?: string;
+  password?: string;
   img?: string;
   isDeleted?: boolean;
 }

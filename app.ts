@@ -17,7 +17,7 @@ declare global {
     }
   }
 }
-dotenv.config({ debug: true, path: "./config.env" });
+dotenv.config({ debug: true });
 
 const server = new Server();
 
