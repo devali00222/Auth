@@ -1,6 +1,8 @@
 import { check } from "express-validator";
 import { validateRequest } from "../../validateRequest";
 import { isCorrectPassword } from "./custom/userCustomValidators";
+import { isUserDeleted } from '../custom/deleteUserValidator';
+
 import {
   usernameIsRegisteredInDatabase,
   emailIsRegisteredInDatabase,
@@ -19,7 +21,8 @@ export const loginUserValidators = [
     .normalizeEmail()
     .isEmail()
     .withMessage("Email is invalid")
-    .custom(emailIsRegisteredInDatabase),
+    .custom(emailIsRegisteredInDatabase)
+    .custom(isUserDeleted),
   check("password", "Password is required")
     .trim()
     .not()

@@ -9,7 +9,7 @@ import {
   registerUserValidators,
   loginUserValidators,
   userUpdateValidators,
-  // userDeleteValidators,
+  userDeleteValidators,
 } from "../middlewares";
 
 const router = Router();
@@ -17,7 +17,7 @@ const router = Router();
 router.post("/login", loginUserValidators, loginUser);
 router.post("/register", registerUserValidators, registerUser);
 router.put("/:id", userUpdateValidators, updateUser);
-router.put("/:id/delete", deleteUser);
+router.put("/:id/delete", userDeleteValidators, deleteUser);
 
 router.get("*", function (req: Request, res: Response) {
   return res.status(404).json({
